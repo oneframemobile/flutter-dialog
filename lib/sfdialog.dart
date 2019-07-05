@@ -7,8 +7,10 @@ import 'core/helper/ui_helper.dart';
 
 class SFDialog {
   /// Must be required [title],[type],[context] item.
+  /// or use custom widget.
   /// This statement return starforce ui design.
   static void show({
+    Widget child,
     String description,
     @required String title,
     @required DialogType type,
@@ -20,7 +22,9 @@ class SFDialog {
     showDialog(
       barrierDismissible: barrierDismissible ?? true,
       context: context,
-      builder: (BuildContext context) => StarforceDialog(
+      builder: (BuildContext context) =>
+          child ??
+          StarforceDialog(
             title: title,
             description: description,
             type: type,
