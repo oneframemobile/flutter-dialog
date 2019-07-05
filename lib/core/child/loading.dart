@@ -33,6 +33,5 @@ class LoadingDialog extends StatelessWidget {
         style: UIHelper.descriptionTextStyle,
       );
   Widget get _loading => CircularProgressIndicator();
-  Widget get _infoIcon => this.icon ?? Icon(Icons.data_usage);
   Widget get _space => UIHelper.verticalSpace(height: 10);
 }

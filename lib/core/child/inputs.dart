@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../helper/ui_helper.dart';
+import 'package:sfdialog/core/helper/ui_helper.dart';
 
 class InputsDialog extends StatelessWidget {
   InputsDialog({
@@ -67,6 +67,12 @@ class InputsDialog extends StatelessWidget {
       );
 
   // Widget get _buttons => this.buttons ?? UIHelper.verticalSpace(height: 10);
-  Widget get _infoIcon => this.icon ?? UIHelper.verticalSpace(height: 10);
+  Widget get _infoIcon =>
+      this.icon ??
+      Icon(
+        Icons.keyboard,
+        color: Colors.red,
+        size: UIHelper.ICON_SIZE,
+      );
   Widget get _space => UIHelper.verticalSpace(height: 10);
 }

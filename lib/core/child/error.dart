@@ -51,6 +51,12 @@ class ErrorDialog extends StatelessWidget {
         textAlign: TextAlign.center,
         style: UIHelper.descriptionTextStyle,
       );
-  Widget get _infoIcon => this.icon ?? Icon(Icons.close, color: Colors.red);
+  Widget get _infoIcon =>
+      this.icon ??
+      Icon(
+        Icons.close,
+        color: Colors.red,
+        size: UIHelper.ICON_SIZE,
+      );
   Widget get _space => UIHelper.verticalSpace(height: 10);
 }
