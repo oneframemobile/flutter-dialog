@@ -10,7 +10,7 @@ class LoadingDialog extends StatelessWidget {
   }) : super(key: key);
   final String title;
   final String description;
-  final Icon icon;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,13 +25,15 @@ class LoadingDialog extends StatelessWidget {
 
   Widget get _title => Text(
         this.title,
-        style: UIHelper.titleTextStyle,
+        style: SFUIHelper.titleTextStyle,
       );
+
   Widget get _description => Text(
         this.description ?? "",
         textAlign: TextAlign.center,
-        style: UIHelper.descriptionTextStyle,
+        style: SFUIHelper.descriptionTextStyle,
       );
+
   Widget get _loading => CircularProgressIndicator();
-  Widget get _space => UIHelper.verticalSpace(height: 10);
+  Widget get _space => SFUIHelper.verticalSpace(height: 10);
 }

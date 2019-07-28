@@ -12,7 +12,7 @@ class InputsDialog extends StatelessWidget {
   }) : super(key: key);
   final String title;
   final String description;
-  final Icon icon;
+  final IconData icon;
   final List<RaisedButton> buttons;
   final List<TextField> inputs;
   @override
@@ -39,40 +39,40 @@ class InputsDialog extends StatelessWidget {
 
   Widget _subListExpandedWidget(Widget widget) => Expanded(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: UIHelper.padding),
+          padding: EdgeInsets.symmetric(horizontal: SFUIHelper.padding),
           child: widget,
         ),
       );
 
   Widget get _buttons => buttons == null
-      ? UIHelper.verticalSpace(height: UIHelper.padding)
+      ? SFUIHelper.verticalSpace(height: SFUIHelper.padding)
       : Row(
           children: _buttonExpanded,
         );
 
   Widget get _title => Text(
         this.title,
-        style: UIHelper.titleTextStyle,
+        style: SFUIHelper.titleTextStyle,
       );
 
   Widget get _inputs => Wrap(
-        runSpacing: UIHelper.padding,
+        runSpacing: SFUIHelper.padding,
         children: inputs,
       );
 
   Widget get _description => Text(
         this.description ?? "",
         textAlign: TextAlign.center,
-        style: UIHelper.descriptionTextStyle,
+        style: SFUIHelper.descriptionTextStyle,
       );
 
-  // Widget get _buttons => this.buttons ?? UIHelper.verticalSpace(height: 10);
+  // Widget get _buttons => this.buttons ?? SFUIHelper.verticalSpace(height: 10);
   Widget get _infoIcon =>
       this.icon ??
       Icon(
         Icons.keyboard,
         color: Colors.red,
-        size: UIHelper.ICON_SIZE,
+        size: SFUIHelper.ICON_SIZE,
       );
-  Widget get _space => UIHelper.verticalSpace(height: 10);
+  Widget get _space => SFUIHelper.verticalSpace(height: 10);
 }

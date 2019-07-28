@@ -15,17 +15,19 @@ class StarforceDialog extends StatefulWidget {
   final List<Widget> buttons;
   final DialogType type;
   final List<TextField> fields;
-  final Icon icon;
+  final IconData icon;
+  final SFDialogTheme theme;
 
-  StarforceDialog(
-      {Key key,
-      @required this.title,
-      this.fields,
-      this.description,
-      @required this.type,
-      this.buttons,
-      this.icon})
-      : super(key: key);
+  StarforceDialog({
+    Key key,
+    @required this.title,
+    @required this.type,
+    this.fields,
+    this.description,
+    this.buttons,
+    this.icon,
+    this.theme = SFDialogTheme.medium,
+  }) : super(key: key);
 }
 
 class StarforceDialogState extends State<StarforceDialog>
@@ -43,7 +45,7 @@ class StarforceDialogState extends State<StarforceDialog>
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(UIHelper.padding),
+        borderRadius: BorderRadius.circular(SFUIHelper.padding),
       ),
       backgroundColor: Colors.transparent,
       child: _dialogContent,
@@ -52,12 +54,12 @@ class StarforceDialogState extends State<StarforceDialog>
 
   Widget get _dialogContent {
     return BackdropFilter(
-      filter: UIHelper.backgroundFilter,
+      filter: SFUIHelper.backgroundFilter,
       child: ScaleTransition(
         scale: _scaleAnimation,
         child: Container(
-          padding: EdgeInsets.all(UIHelper.padding),
-          decoration: UIHelper.dialogBoxDecoration,
+          padding: EdgeInsets.all(SFUIHelper.padding),
+          decoration: SFUIHelper.dialogBoxDecoration,
           child: Column(
             mainAxisSize: MainAxisSize.min, // To make the card compact
             children: <Widget>[_dialogCloseButton, _dialog],
@@ -74,6 +76,7 @@ class StarforceDialogState extends State<StarforceDialog>
             title: widget.title,
             description: widget.description,
             buttons: widget.buttons,
+            theme: widget.theme,
             icon: widget.icon);
       case DialogType.success:
         return SuccessDialog(
@@ -108,7 +111,7 @@ class StarforceDialogState extends State<StarforceDialog>
 
   Widget get _dialogCloseButton {
     return widget.type == DialogType.loading
-        ? UIHelper.verticalSpace()
+        ? SFUIHelper.verticalSpace()
         : Align(
             alignment: Alignment.topRight,
             child: IconButton(

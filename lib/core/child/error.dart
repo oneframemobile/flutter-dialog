@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../helper/ui_helper.dart';
 
 class ErrorDialog extends StatelessWidget {
@@ -11,7 +12,7 @@ class ErrorDialog extends StatelessWidget {
   }) : super(key: key);
   final String title;
   final String description;
-  final Icon icon;
+  final IconData icon;
   final List<Widget> buttons;
 
   @override
@@ -37,26 +38,26 @@ class ErrorDialog extends StatelessWidget {
       );
 
   Widget get _buttons => buttons == null
-      ? UIHelper.verticalSpace(height: 10)
+      ? SFUIHelper.verticalSpace(height: 10)
       : Row(
           children: _buttonExpanded,
         );
 
   Widget get _title => Text(
         this.title,
-        style: UIHelper.titleTextStyle,
+        style: SFUIHelper.titleTextStyle,
       );
   Widget get _description => Text(
         this.description ?? "",
         textAlign: TextAlign.center,
-        style: UIHelper.descriptionTextStyle,
+        style: SFUIHelper.descriptionTextStyle,
       );
   Widget get _infoIcon =>
       this.icon ??
       Icon(
         Icons.close,
         color: Colors.red,
-        size: UIHelper.ICON_SIZE,
+        size: SFUIHelper.ICON_SIZE,
       );
-  Widget get _space => UIHelper.verticalSpace(height: 10);
+  Widget get _space => SFUIHelper.verticalSpace(height: 10);
 }

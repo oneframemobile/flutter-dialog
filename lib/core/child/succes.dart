@@ -11,7 +11,7 @@ class SuccessDialog extends StatelessWidget {
   }) : super(key: key);
   final String title;
   final String description;
-  final Icon icon;
+  final IconData icon;
   final List<Widget> buttons;
 
   @override
@@ -37,19 +37,22 @@ class SuccessDialog extends StatelessWidget {
       );
 
   Widget get _buttons => buttons == null
-      ? UIHelper.verticalSpace(height: 10)
+      ? SFUIHelper.verticalSpace(height: 10)
       : Row(
           children: _buttonExpanded,
         );
+
   Widget get _title => Text(
         this.title,
-        style: UIHelper.titleTextStyle,
+        style: SFUIHelper.titleTextStyle,
       );
+
   Widget get _description => Text(
         this.description ?? "",
         textAlign: TextAlign.center,
-        style: UIHelper.descriptionTextStyle,
+        style: SFUIHelper.descriptionTextStyle,
       );
-  Widget get _infoIcon => this.icon ?? Icon(Icons.check, color: Colors.green);
-  Widget get _space => UIHelper.verticalSpace(height: 10);
+
+  Widget get _infoIcon => Icon(this.icon ?? Icons.check, color: Colors.green);
+  Widget get _space => SFUIHelper.verticalSpace(height: 10);
 }

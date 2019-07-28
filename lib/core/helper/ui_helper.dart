@@ -3,15 +3,24 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 enum DialogType { info, success, error, buttons, inputs, loading }
+enum SFDialogTheme { light, medium, bold }
 
-class UIHelper {
-  UIHelper._();
+class SFUIHelper {
+  SFUIHelper._();
 
+  static const double Space10 = 10;
   static const double padding = 8.0;
   static const double ICON_SIZE = 60.0;
 
   static final TextStyle titleTextStyle =
+      TextStyle(fontSize: 28, fontWeight: FontWeight.w400);
+
+  static final TextStyle titleTextBoldStyle =
       TextStyle(fontSize: 32, fontWeight: FontWeight.w700);
+
+  static final TextStyle titleTextThinStyle =
+      TextStyle(fontSize: 24, fontWeight: FontWeight.w200);
+
   static final TextStyle descriptionTextStyle = TextStyle(fontSize: 14);
 
   static final TextStyle descriptionErrorTextStyle =
@@ -20,7 +29,7 @@ class UIHelper {
   static final dialogBoxDecoration = BoxDecoration(
     color: Colors.white,
     shape: BoxShape.rectangle,
-    borderRadius: BorderRadius.circular(UIHelper.padding),
+    borderRadius: BorderRadius.circular(SFUIHelper.padding),
     boxShadow: [
       BoxShadow(
         color: Colors.black26,

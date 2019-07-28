@@ -21,13 +21,15 @@ class MyApp extends StatelessWidget {
           child: Container(
             child: RaisedButton(
               onPressed: () {
-                    final _context = navigatorKey.currentState.overlay.context;
-
+                final _context = navigatorKey.currentState.overlay.context;
                 SFDialog.show(
-                  context: _context,
-                  title: "Welcome",
-                  type: DialogType.info,
-                );
+                    context: _context,
+                    title: "Welcome",
+                    type: DialogType.info,
+                    description: "aa",
+                    theme: SFDialogTheme.light,
+                    icon: Icons.ac_unit);
+                    
               },
               child: Text("aa"),
             ),

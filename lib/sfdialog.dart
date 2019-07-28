@@ -12,8 +12,10 @@ class SFDialog {
   static void show({
     Widget child,
     String description,
+    IconData icon,
     @required String title,
     @required DialogType type,
+    SFDialogTheme theme,
     List<Widget> buttons,
     List<TextField> inputs,
     bool barrierDismissible,
@@ -28,8 +30,10 @@ class SFDialog {
             title: title,
             description: description,
             type: type,
+            theme : theme,
             fields: inputs,
             buttons: buttons,
+            icon: icon,
           ),
     );
   }
