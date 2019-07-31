@@ -12,7 +12,7 @@ class SFDialog {
   static void show({
     Widget child,
     String description,
-    IconData icon,
+    Icon icon,
     @required String title,
     @required DialogType type,
     SFDialogTheme theme,
