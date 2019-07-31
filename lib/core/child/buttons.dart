@@ -93,7 +93,6 @@ class InfoDialog extends StatelessWidget implements BaseDialog {
   @override
   Widget get titleWidget => Text(
         title,
-        textAlign: TextAlign.center,
         style: titleTextStyle,
       );
 }
