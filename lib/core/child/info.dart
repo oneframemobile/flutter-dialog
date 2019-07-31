@@ -14,7 +14,7 @@ class InfoDialog extends StatelessWidget implements BaseDialog {
 
   final String title;
   final String description;
-  final IconData icon;
+  final Icon icon;
   final List<Widget> buttons;
   final SFDialogTheme theme;
   @override
@@ -36,8 +36,10 @@ class InfoDialog extends StatelessWidget implements BaseDialog {
         style: SFUIHelper.descriptionTextStyle,
       );
 
-  Widget get _infoIcon => Icon(
-        this.icon ?? Icons.info,
+  Widget get _infoIcon =>
+      this.icon ??
+      Icon(
+        Icons.info,
         size: SFUIHelper.ICON_SIZE,
         color: Colors.blue,
       );

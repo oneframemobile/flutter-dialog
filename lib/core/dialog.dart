@@ -15,7 +15,7 @@ class StarforceDialog extends StatefulWidget {
   final List<Widget> buttons;
   final DialogType type;
   final List<TextField> fields;
-  final IconData icon;
+  final Icon icon;
   final SFDialogTheme theme;
 
   StarforceDialog({

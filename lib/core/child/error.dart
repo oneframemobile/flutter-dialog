@@ -12,7 +12,7 @@ class ErrorDialog extends StatelessWidget {
   }) : super(key: key);
   final String title;
   final String description;
-  final IconData icon;
+  final Icon icon;
   final List<Widget> buttons;
 
   @override
