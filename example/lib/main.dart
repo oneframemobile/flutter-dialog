@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
                     type: DialogType.info,
                     description: "aa",
                     theme: SFDialogTheme.light,
-                    icon: Icons.ac_unit);
+                    icon: Icon(Icons.ac_unit));
                     
               },
               child: Text("aa"),

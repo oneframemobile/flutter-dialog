@@ -17,6 +17,7 @@ class StarforceDialog extends StatefulWidget {
   final List<TextField> fields;
   final Icon icon;
   final SFDialogTheme theme;
+  final Function onClose;
 
   StarforceDialog({
     Key key,
@@ -27,6 +28,7 @@ class StarforceDialog extends StatefulWidget {
     this.buttons,
     this.icon,
     this.theme = SFDialogTheme.medium,
+    this.onClose,
   }) : super(key: key);
 }
 
@@ -115,7 +117,10 @@ class StarforceDialogState extends State<StarforceDialog>
         : Align(
             alignment: Alignment.topRight,
             child: IconButton(
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () {
+                Navigator.of(context).pop();
+                widget.onClose();
+              },
               icon: Icon(Icons.close),
             ),
           );

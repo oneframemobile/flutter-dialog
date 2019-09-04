@@ -15,6 +15,7 @@ class SFDialog {
     Icon icon,
     @required String title,
     @required DialogType type,
+    Function onClose,
     SFDialogTheme theme,
     List<Widget> buttons,
     List<TextField> inputs,
@@ -30,10 +31,11 @@ class SFDialog {
             title: title,
             description: description,
             type: type,
-            theme : theme,
+            theme: theme,
             fields: inputs,
             buttons: buttons,
             icon: icon,
+            onClose: onClose,
           ),
     );
   }
