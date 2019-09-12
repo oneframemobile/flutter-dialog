@@ -26,7 +26,10 @@ class MyApp extends StatelessWidget {
                     context: _context,
                     title: "Welcome",
                     type: DialogType.info,
-                    description: "aa",
+                    maxDescLines: 2,
+                    description: "asdasdasd asd asd asd a dasd as d asd asd as das das das"
+                        "asdasdasd asd asd asd a dasd as d asd asd as das das das"
+                        "asdasdasd asd asd asd a dasd as d asd asd as das das das ",
                     theme: SFDialogTheme.light,
                     icon: Icon(Icons.ac_unit));
                     

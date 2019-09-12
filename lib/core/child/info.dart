@@ -36,11 +36,10 @@ class InfoDialog extends StatelessWidget implements BaseDialog {
 
   Widget get _description => Text(
         this.description ?? "",
-        maxLines: maxDescLines,
         textAlign: TextAlign.center,
         style: SFUIHelper.descriptionTextStyle,
-        overflow: TextOverflow.fade,
-        softWrap: false,
+        overflow: TextOverflow.ellipsis,
+        maxLines: maxDescLines,
       );
 
   Widget get _infoIcon =>
