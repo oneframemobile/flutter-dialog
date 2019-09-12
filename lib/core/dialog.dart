@@ -18,6 +18,7 @@ class StarforceDialog extends StatefulWidget {
   final Icon icon;
   final SFDialogTheme theme;
   final Function onClose;
+  final int maxLines;
 
   StarforceDialog({
     Key key,
@@ -28,7 +29,7 @@ class StarforceDialog extends StatefulWidget {
     this.buttons,
     this.icon,
     this.theme = SFDialogTheme.medium,
-    this.onClose,
+    this.onClose, this.maxLines,
   }) : super(key: key);
 }
 
@@ -79,6 +80,7 @@ class StarforceDialogState extends State<StarforceDialog>
             description: widget.description,
             buttons: widget.buttons,
             theme: widget.theme,
+            maxLines: widget.maxLines,
             icon: widget.icon);
       case DialogType.success:
         return SuccessDialog(
@@ -107,6 +109,7 @@ class StarforceDialogState extends State<StarforceDialog>
         return InfoDialog(
             title: widget.title,
             description: widget.description,
+            maxLines: widget.maxLines,
             icon: widget.icon);
     }
   }
