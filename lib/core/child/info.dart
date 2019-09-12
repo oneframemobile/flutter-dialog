@@ -34,6 +34,7 @@ class InfoDialog extends StatelessWidget implements BaseDialog {
 
   Widget get _description => Text(
         this.description ?? "",
+        maxLines: maxLines,
         textAlign: TextAlign.center,
         style: SFUIHelper.descriptionTextStyle,
       );
@@ -98,7 +99,6 @@ class InfoDialog extends StatelessWidget implements BaseDialog {
   Widget get titleWidget => Text(
         title,
         textAlign: TextAlign.center,
-        maxLines: maxLines,
         style: titleTextStyle,
       );
 }

@@ -20,6 +20,7 @@ class SFDialog {
     List<Widget> buttons,
     List<TextField> inputs,
     bool barrierDismissible,
+    int maxLines,
     @required BuildContext context,
   }) {
     showDialog(
@@ -34,6 +35,7 @@ class SFDialog {
             theme: theme,
             fields: inputs,
             buttons: buttons,
+            maxLines: maxLines,
             icon: icon,
             onClose: onClose,
           ),

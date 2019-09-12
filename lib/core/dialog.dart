@@ -29,7 +29,8 @@ class StarforceDialog extends StatefulWidget {
     this.buttons,
     this.icon,
     this.theme = SFDialogTheme.medium,
-    this.onClose, this.maxLines,
+    this.onClose,
+    this.maxLines,
   }) : super(key: key);
 }
 
