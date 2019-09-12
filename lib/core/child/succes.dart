@@ -9,11 +9,13 @@ class SuccessDialog extends StatelessWidget {
     this.icon,
     this.buttons,
     this.maxDescLines,
+    this.maxTitleLines,
   }) : super(key: key);
   final String title;
   final String description;
   final Icon icon;
   final int maxDescLines;
+  final int maxTitleLines;
   final List<Widget> buttons;
 
   @override
@@ -46,6 +48,7 @@ class SuccessDialog extends StatelessWidget {
 
   Widget get _title => Text(
         this.title,
+        maxLines: maxTitleLines,
         style: SFUIHelper.titleTextStyle,
       );
 

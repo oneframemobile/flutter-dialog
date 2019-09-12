@@ -11,12 +11,14 @@ class InfoDialog extends StatelessWidget implements BaseDialog {
     this.buttons,
     this.theme,
     this.maxDescLines,
+    this.maxTitleLines,
   }) : super(key: key);
 
   final String title;
   final String description;
   final Icon icon;
   final int maxDescLines;
+  final int maxTitleLines;
   final List<Widget> buttons;
   final SFDialogTheme theme;
   @override
@@ -99,6 +101,7 @@ class InfoDialog extends StatelessWidget implements BaseDialog {
   Widget get titleWidget => Text(
         title,
         textAlign: TextAlign.center,
+        maxLines: maxTitleLines,
         style: titleTextStyle,
       );
 }

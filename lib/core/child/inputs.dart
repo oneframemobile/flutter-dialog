@@ -6,6 +6,8 @@ class InputsDialog extends StatelessWidget {
     Key key,
     @required this.title,
     this.description,
+    this.maxDescLines,
+    this.maxTitleLines,
     this.icon,
     @required this.inputs,
     this.buttons,
@@ -15,6 +17,8 @@ class InputsDialog extends StatelessWidget {
   final Icon icon;
   final List<RaisedButton> buttons;
   final List<TextField> inputs;
+  final int maxDescLines;
+  final int maxTitleLines;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -52,6 +56,7 @@ class InputsDialog extends StatelessWidget {
 
   Widget get _title => Text(
         this.title,
+        maxLines: maxTitleLines,
         style: SFUIHelper.titleTextStyle,
       );
 
@@ -63,6 +68,7 @@ class InputsDialog extends StatelessWidget {
   Widget get _description => Text(
         this.description ?? "",
         textAlign: TextAlign.center,
+        maxLines: maxDescLines,
         style: SFUIHelper.descriptionTextStyle,
       );
 

@@ -8,6 +8,7 @@ class ErrorDialog extends StatelessWidget {
     @required this.title,
     this.description,
     this.maxDescLines,
+    this.maxTitleLines,
     this.icon,
     this.buttons,
   }) : super(key: key);
@@ -15,6 +16,7 @@ class ErrorDialog extends StatelessWidget {
   final String description;
   final Icon icon;
   final int maxDescLines;
+  final int maxTitleLines;
   final List<Widget> buttons;
 
   @override
@@ -47,6 +49,7 @@ class ErrorDialog extends StatelessWidget {
 
   Widget get _title => Text(
         this.title,
+        maxLines: maxTitleLines,
         style: SFUIHelper.titleTextStyle,
       );
   Widget get _description => Text(

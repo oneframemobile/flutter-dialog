@@ -7,12 +7,14 @@ class LoadingDialog extends StatelessWidget {
     @required this.title,
     this.description,
     this.maxDescLines,
+    this.maxTitleLines,
     this.icon,
   }) : super(key: key);
   final String title;
   final String description;
   final Icon icon;
   final int maxDescLines;
+  final int maxTitleLines;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,6 +29,7 @@ class LoadingDialog extends StatelessWidget {
 
   Widget get _title => Text(
         this.title,
+        maxLines: maxTitleLines,
         style: SFUIHelper.titleTextStyle,
       );
 

@@ -19,6 +19,7 @@ class StarforceDialog extends StatefulWidget {
   final SFDialogTheme theme;
   final Function onClose;
   final int maxDescLines;
+  final int maxTitleLines;
 
   StarforceDialog({
     Key key,
@@ -31,6 +32,7 @@ class StarforceDialog extends StatefulWidget {
     this.theme = SFDialogTheme.medium,
     this.onClose,
     this.maxDescLines,
+    this.maxTitleLines,
   }) : super(key: key);
 }
 
@@ -82,24 +84,28 @@ class StarforceDialogState extends State<StarforceDialog>
             buttons: widget.buttons,
             theme: widget.theme,
             maxDescLines: widget.maxDescLines,
+            maxTitleLines: widget.maxTitleLines,
             icon: widget.icon);
       case DialogType.success:
         return SuccessDialog(
             title: widget.title,
             description: widget.description,
             maxDescLines: widget.maxDescLines,
+            maxTitleLines: widget.maxTitleLines,
             icon: widget.icon);
       case DialogType.loading:
         return LoadingDialog(
             title: widget.title,
             description: widget.description,
             maxDescLines: widget.maxDescLines,
+            maxTitleLines: widget.maxTitleLines,
             icon: widget.icon);
       case DialogType.error:
         return ErrorDialog(
             title: widget.title,
             description: widget.description,
             maxDescLines: widget.maxDescLines,
+            maxTitleLines: widget.maxTitleLines,
             icon: widget.icon);
         break;
       case DialogType.inputs:
@@ -107,6 +113,8 @@ class StarforceDialogState extends State<StarforceDialog>
             inputs: widget.fields,
             title: widget.title,
             description: widget.description,
+            maxDescLines: widget.maxDescLines,
+            maxTitleLines: widget.maxTitleLines,
             icon: widget.icon);
         break;
       default:
@@ -114,6 +122,7 @@ class StarforceDialogState extends State<StarforceDialog>
             title: widget.title,
             description: widget.description,
             maxDescLines: widget.maxDescLines,
+            maxTitleLines: widget.maxTitleLines,
             icon: widget.icon);
     }
   }
