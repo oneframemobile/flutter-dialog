@@ -55,9 +55,9 @@ class ErrorDialog extends StatelessWidget {
   Widget get _description => Text(
         this.description ?? "",
         textAlign: TextAlign.center,
-        maxLines: maxDescLines,
         style: SFUIHelper.descriptionTextStyle,
         overflow: TextOverflow.ellipsis,
+        maxLines: maxDescLines,
       );
   Widget get _infoIcon =>
       this.icon ??

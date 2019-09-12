@@ -68,9 +68,9 @@ class InputsDialog extends StatelessWidget {
   Widget get _description => Text(
         this.description ?? "",
         textAlign: TextAlign.center,
-        maxLines: maxDescLines,
         style: SFUIHelper.descriptionTextStyle,
         overflow: TextOverflow.ellipsis,
+        maxLines: maxDescLines,
       );
 
   // Widget get _buttons => this.buttons ?? SFUIHelper.verticalSpace(height: 10);
